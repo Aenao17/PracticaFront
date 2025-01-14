@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignupPageModule),
     canActivate: [LoginGuard]
+  },
+  {
+    path: 'quiz',
+    loadChildren: () => import('./pages/quiz/quiz.module').then( m => m.QuizPageModule),
+    canActivate: [AuthGuard]
   }
 
 ];

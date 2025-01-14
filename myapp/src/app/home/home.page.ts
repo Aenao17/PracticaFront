@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import {Router} from "@angular/router";
+import {NavController} from "@ionic/angular";
 
 @Component({
   selector: 'app-home',
@@ -8,6 +11,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private navCtrl: NavController)
+  {}
+
+  startQuiz() {
+    this.router.navigate(['/quiz']);
+  }
+
+
+  async logout() {
+    await this.auth.logout();
+  }
 
 }

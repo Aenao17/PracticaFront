@@ -95,7 +95,6 @@ export class AuthService {
 
 	// Logout method
 	async logout() {
-		this.navCtrl.navigateRoot("/login");
 		try {
 			await lastValueFrom(this.http.get(`${this.apiUrl}/logout`));
 		} catch (err) {
@@ -105,6 +104,19 @@ export class AuthService {
 		}).catch((err) => {
 			console.error(err);
 		});
+    this.storage.remove('id').then(() => {
+    }).catch((err) => {
+      console.error(err);
+    });
+    this.storage.remove('username').then(() => {
+    }).catch((err) => {
+      console.error(err);
+    });
+    this.storage.remove('email').then(() => {
+    }).catch((err) => {
+      console.error(err);
+    });
+    this.router.navigate(['/login']);
 	}
 
 	public getById(id: string) {

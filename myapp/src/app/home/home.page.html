@@ -1,37 +1,16 @@
-
-  <ion-content fullscreen>
-    <div class="home-container">
-      <div class="footprint-details">
-        <h1 class="co2-stat">
-          17.4 <span>ton CO₂/year</span>
-        </h1>
-        <p class="comparison">+5% since last month</p>
-      </div>
-
-      <div class="chart">
-        <img
-          src={grafic}
-          alt="Monthly Progress Chart"
-          class="chart-image"
-        />
-        <div class="months">
-          <span>Jan</span>
-          <span>Feb</span>
-          <span>Mar</span>
-          <span>Apr</span>
-        </div>
-      </div>
-
-      <div class="illustration">
-        <img
-          src={femeie}
-          alt="Person Holding Plant"
-          class="illustration-image"
-        />
-      </div>
+<ion-content>
+  <div class="home-container">
+    <div class="home-header">
+      <h1>Welcome to Carbon Footprint Calculator</h1>
     </div>
-
-    <div class="navigation-bar">
-
+    <div class="home-buttons">
+      <ion-button fill="clear" (click)="startQuiz()" class="home-button">Start Quiz</ion-button>
+      <ion-button fill="clear" class="home-button">Leaderboard</ion-button>
     </div>
-  </ion-content>
+  </div>
+  <div class="navigation-bar">
+    <ion-button fill="clear" (click)="logout()" class="nav-icon">
+      Logout
+    </ion-button>
+  </div>
+</ion-content>
