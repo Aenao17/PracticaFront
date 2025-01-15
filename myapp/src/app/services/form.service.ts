@@ -27,4 +27,9 @@ export class FormService {
     const response = await lastValueFrom(this.http.post(`${this.apiUrl}/${user.id}`, answers));
     return response;
   }
+
+  async getLeaderboard() {
+    const leaderboard:any = await lastValueFrom(this.http.get(`${environment.apiUrl}/users/leaderboard`));
+    return leaderboard;
+  }
 }

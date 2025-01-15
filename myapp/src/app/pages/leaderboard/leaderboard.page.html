@@ -1,0 +1,25 @@
+<ion-content>
+  <div class="leaderboard-container">
+    <div class="leaderboard-header">
+      <h1>Leaderboard</h1>
+    </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Leaderboard</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let user of leaderboard">
+            <ion-label>{{user.username}}</ion-label>
+            <ion-label>{{user.score}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="navigation bar">
+    <ion-button fill="clear" (click)="returnHome()">
+      Home
+    </ion-button>
+  </div>
+</ion-content>

@@ -28,7 +28,13 @@ const routes: Routes = [
     path: 'quiz',
     loadChildren: () => import('./pages/quiz/quiz.module').then( m => m.QuizPageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'leaderboard',
+    loadChildren: () => import('./pages/leaderboard/leaderboard.module').then( m => m.LeaderboardPageModule),
+    canActivate: [AuthGuard]
   }
+
 
 ];
 

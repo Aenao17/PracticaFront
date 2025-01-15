@@ -21,6 +21,10 @@ export class HomePage {
     this.router.navigate(['/quiz']);
   }
 
+  viewLeaderboard() {
+    this.router.navigate(['/leaderboard']);
+  }
+
 
   async logout() {
     await this.auth.logout();
