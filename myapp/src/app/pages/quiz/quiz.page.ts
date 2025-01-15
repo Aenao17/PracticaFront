@@ -3,7 +3,7 @@ import {IonicModule, NavController} from "@ionic/angular";
 import {FormService} from "../../services/form.service";
 import {AuthService} from "../../services/auth.service";
 import {FormsModule} from "@angular/forms";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-quiz',
@@ -12,7 +12,8 @@ import {NgForOf} from "@angular/common";
   imports: [
     IonicModule,
     FormsModule,
-    NgForOf
+    NgForOf,
+    NgIf
   ]
 })
 export class QuizPage implements OnInit {
@@ -79,9 +80,11 @@ export class QuizPage implements OnInit {
     this.saveAnswer(); // Ensure the last answer is saved
     const resp = await this.formservice.submitForm(this.answers);
     this.score = resp;
+    alert("Your score is: "+this.score);
     this.isComplete = true;
     const aii:any = await this.formservice.getAI(this.answers);
     this.ai=aii.recommendation
+    console.log("BAAAA"+aii.recommendation);
   }
 
   returnHome(){

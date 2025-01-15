@@ -1,163 +1,107 @@
-/* Set the background of the entire page */
+/* Global Styles */
 ion-content {
-  background: linear-gradient(to bottom, #92A78D, #5E8C61);
-  padding: 0;
-  font-family: Arial, sans-serif;
-  color: #333;
+  --background: linear-gradient(to bottom, #92A78D, #5E8C61);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Quiz container styling */
 .quiz-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 16px;
-  background: linear-gradient(to bottom, #B9DF71, #5E8C61); /* Adjusted for the new green shades */
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Quiz header styling */
-.quiz-header h1 {
-  font-size: 2.5rem;
-  color: #3E6046; /* Updated to match the new color palette */
-  font-weight: 600;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-/* Home button styling */
-.home-button {
-  align-self: flex-start;
-  font-size: 1rem;
-  color: #5E8C61; /* Match the green tone for consistency */
-  margin-top: 16px;
-}
-
-/* Card content for the quiz */
-ion-card {
   width: 100%;
   max-width: 600px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  color: #3E6046;
+  margin: auto;
 }
 
-ion-card-header {
-  background-color: #5E8C61; /* Updated header color */
-  color: white;
-  padding: 15px;
+.quiz-header h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5em;
+  color: #2F4F3B;
+  margin-bottom: 20px;
+}
+
+.home-button {
+  color: #5E8C61;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.home-button:hover {
+  color: #3E6046;
+}
+
+.ai-label {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.1em;
+  color: #3E6046;
+}
+
+/* Card Styles */
+ion-card {
+  margin-top: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 ion-card-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
   font-size: 1.5em;
+  color: #white;
 }
 
-/* Styling for the radio button list */
-ion-radio-group {
-  display: block;
+ion-card-content {
+  font-size: 1.1em;
+  color: #3E6046;
+}
+
+/* List and Radio Group */
+ion-list {
+  margin-top: 15px;
 }
 
 ion-item {
-  margin-bottom: 10px;
+  --background: transparent;
+}
+
+ion-label {
+  font-size: 1.1em;
+  color: #3E6046;
 }
 
 ion-radio {
-  margin-right: 10px;
+  --color-checked: #5E8C61;
 }
 
-/* Styling for buttons */
+/* Buttons */
 .quiz-button, .next-button {
-  padding: 16px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: 2px solid #3E6046; /* Use the updated dark green */
-  background-color: #ffffff;
-  color: #3E6046; /* Updated text color */
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
+  color: #5E8C61;
+  font-size: 1.2em;
+  margin-top: 20px;
 }
 
 .quiz-button:hover, .next-button:hover {
-  background-color: #3E6046; /* Updated hover background */
-  color: white;
+  color: #3E6046;
 }
 
-.quiz-button:active, .next-button:active {
-  background-color: #2F4F4F;
-  color: white;
-  border-color: #2F4F4F;
-  transform: scale(0.98);
-}
-
-/* Submit Button */
-ion-button.submit-button {
-  background-color: #5E8C61; /* Match the theme */
-  color: white;
-  font-size: 1.1em;
-  border-radius: 10px;
-  padding: 12px;
-}
-
-ion-button.submit-button:hover {
-  background-color: #3E6046; /* Darker green on hover */
-}
-
-/* Alert */
-ion-alert {
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-ion-alert ion-title {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1.5em;
-  color: #3E6046; /* Adjusted for consistency with header */
-}
-
-ion-alert p {
-  color: #3E6046; /* Dark green text */
-  font-size: 1.2em;
-}
-
-ion-alert ion-button {
+.submit-button {
+  margin-top: 30px;
   width: 100%;
-  margin-top: 20px;
-  background-color: #5E8C61; /* Button background matches the theme */
-  color: white;
-  font-size: 1.1em;
-  border-radius: 10px;
-}
-
-ion-alert ion-button:hover {
-  background-color: #3E6046; /* Dark green hover effect */
-}
-
-/* Home button styling */
-ion-button.home-button {
+  padding: 12px;
   background-color: #5E8C61;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  border: none;
   border-radius: 10px;
-  padding: 12px;
-  margin-bottom: 20px;
-  display: block;
 }
 
-ion-button.home-button:hover {
-  background-color: #3E6046; /* Dark green for hover effect */
+.submit-button:hover {
+  background-color: #3E6046;
 }
