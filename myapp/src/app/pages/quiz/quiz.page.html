@@ -1,0 +1,33 @@
+<ion-content>
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h1>Quiz</h1>
+    </div>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{question.question}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-radio-group [(ngModel)]="selectedAnswer">
+            <ion-item *ngFor="let answer of question.responses">
+              <ion-label>{{answer.response}}</ion-label>
+              <ion-radio slot="start" [value]="answer.response"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+        <ion-button fill="clear" (click)="previousQuestion()" class="quiz-button">Previous</ion-button>
+        <ion-button fill="clear" (click)="nextQuestion()" class="quiz-button">Next</ion-button>
+      </ion-card-content>
+    </ion-card>
+    <ion-button fill="clear" (click)="submit()" class="quiz-button">Submit</ion-button>
+  </div>
+  <div class="navigation-bar">
+    <ion-button fill="clear" class="nav-icon">
+      Logout
+    </ion-button>
+    <ion-button fill="clear" (click)="returnHome()">
+      Home
+    </ion-button>
+  </div>
+</ion-content>
