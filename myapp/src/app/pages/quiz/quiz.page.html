@@ -7,6 +7,7 @@
       <ion-button class="home-button" fill="clear" (click)="returnHome()">
         Home
       </ion-button>
+    <ion-label *ngIf="ai!=null" class="ai-label">AI: {{ai}}</ion-label>
     <ion-card>
       <ion-card-header>
         <ion-card-title>{{question.question}}</ion-card-title>
@@ -27,9 +28,7 @@
     <ion-button fill="clear" (click)="submit()" class="quiz-button">Submit</ion-button>
     <ion-alert [isOpen]="isComplete">
       <ion-title>Quiz Complete</ion-title>
-      <ion-content>
         <p>Your carbon footprint is {{score}}</p>
-      </ion-content>
       <ion-button (click)="returnHome()">Return Home</ion-button>
     </ion-alert>
   </div>

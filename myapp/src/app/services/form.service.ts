@@ -28,6 +28,13 @@ export class FormService {
     return response;
   }
 
+  async getAI(answers:any){
+    const response = await lastValueFrom(this.http.post(`http://localhost:5000/generate`, {
+      "answers": answers
+    }));
+    return response
+  }
+
   async getLeaderboard() {
     const leaderboard:any = await lastValueFrom(this.http.get(`${environment.apiUrl}/users/leaderboard`));
     return leaderboard;

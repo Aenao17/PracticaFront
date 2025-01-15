@@ -23,6 +23,7 @@ export class QuizPage implements OnInit {
   public answers: any = [];
   public score: any = null;
   public isComplete: boolean = false;
+  public ai: any = null;
 
   constructor(
     private formservice: FormService,
@@ -79,6 +80,8 @@ export class QuizPage implements OnInit {
     const resp = await this.formservice.submitForm(this.answers);
     this.score = resp;
     this.isComplete = true;
+    const aii:any = await this.formservice.getAI(this.answers);
+    this.ai=aii.recommendation
   }
 
   returnHome(){
