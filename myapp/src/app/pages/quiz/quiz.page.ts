@@ -21,6 +21,8 @@ export class QuizPage implements OnInit {
   protected question: any = "";
   protected selectedAnswer: any = null;
   public answers: any = [];
+  public score: any = null;
+  public isComplete: boolean = false;
 
   constructor(
     private formservice: FormService,
@@ -75,7 +77,8 @@ export class QuizPage implements OnInit {
   async submit() {
     this.saveAnswer(); // Ensure the last answer is saved
     const resp = await this.formservice.submitForm(this.answers);
-    console.log(resp);
+    this.score = resp;
+    this.isComplete = true;
   }
 
   returnHome(){

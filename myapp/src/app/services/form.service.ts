@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { lastValueFrom } from "rxjs";
 import { environment } from "src/environments/environment.prod";
 import {AuthService} from "./auth.service";
+import {StorageService} from "./storage.service";
 
 @Injectable({
   providedIn: 'root',
@@ -19,7 +20,11 @@ export class FormService {
   }
 
   async submitForm(answers: any) {
-    const response = await lastValueFrom(this.http.post(`${this.apiUrl}`, answers));
+    const username = this.auth.getUsername();
+
+    const user:any  = await this.auth.getByUsername(username);
+
+    const response = await lastValueFrom(this.http.post(`${this.apiUrl}/${user.id}`, answers));
     return response;
   }
 }

@@ -21,6 +21,13 @@
       </ion-card-content>
     </ion-card>
     <ion-button fill="clear" (click)="submit()" class="quiz-button">Submit</ion-button>
+    <ion-alert [isOpen]="isComplete">
+      <ion-title>Quiz Complete</ion-title>
+      <ion-content>
+        <p>Your carbon footprint is {{score}}</p>
+      </ion-content>
+      <ion-button (click)="returnHome()">Return Home</ion-button>
+    </ion-alert>
   </div>
   <div class="navigation-bar">
     <ion-button fill="clear" class="nav-icon">

@@ -31,7 +31,7 @@ export class AuthService {
 				console.error(err);
 			});
 
-			// Assuming you store username, fullname, and email in storage as well
+			// Assuming you store username, and email in storage as well
 			this.storage.get('username').then((username) => {
 				this.username = username;
 			}).catch((err) => {
@@ -62,10 +62,10 @@ export class AuthService {
 	// Login method
 	login(username: string, password: string): Promise<any> {
 		const body = {
-			username,
-			password
-		};
-
+      username,
+      password
+    };
+    this.storage.set('username', username);
 		return lastValueFrom(this.http.post(`${this.apiUrl}/login`, body));
 	}
 
@@ -122,4 +122,8 @@ export class AuthService {
 	public getById(id: string) {
 		return lastValueFrom(this.http.get(`${this.apiUrl}/${id}`));
 	}
+
+  public getByUsername(username: string) {
+    return lastValueFrom(this.http.get(`${this.apiUrl}/u/${username}`));
+  }
 }
