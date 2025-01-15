@@ -17,4 +17,9 @@ export class FormService {
     const quiz = await lastValueFrom(this.http.get(`${this.apiUrl}`));
     return quiz;
   }
+
+  async submitForm(answers: any) {
+    const response = await lastValueFrom(this.http.post(`${this.apiUrl}`, answers));
+    return response;
+  }
 }
